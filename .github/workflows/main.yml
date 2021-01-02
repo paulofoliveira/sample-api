@@ -1,4 +1,4 @@
-name: Simple Api Deploy with MSDeploy
+name: Sample Api Deploy with MSDeploy
 
 on:
   push:
