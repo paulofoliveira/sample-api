@@ -28,6 +28,7 @@ namespace SampleApi.Controllers
         }
 
         [HttpGet]
+        [Route("version")]
         public IActionResult GetVersion() => Ok("1.1");
     }
 }
