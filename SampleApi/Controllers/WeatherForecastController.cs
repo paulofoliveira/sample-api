@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,13 @@ namespace SampleApi.Controllers
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
- 
+        private readonly IConfiguration _configuration;
+
+        public WeatherForecastController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
@@ -29,6 +36,6 @@ namespace SampleApi.Controllers
 
         [HttpGet]
         [Route("version")]
-        public IActionResult GetVersion() => Ok("1.2");
+        public IActionResult GetVersion() => Ok($"Versão: {_configuration.GetSection("Version").Value}");
     }
 }
