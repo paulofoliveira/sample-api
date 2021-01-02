@@ -26,5 +26,8 @@ namespace SampleApi.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet]
+        public IActionResult GetVersion() => Ok("1.1");
     }
 }
