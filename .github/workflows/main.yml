@@ -1,4 +1,4 @@
-name: Sample Api Deploy with MSDeploy
+name: CI/CD on Main branch
 
 on:
   push:
