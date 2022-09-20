@@ -1,9 +1,11 @@
-name: CI/CD on main
+name: 'Deploy: IIS'
 
 on:
   push:
     branches:
     - 'main'
+    paths:
+    - 'SampleApi/**'
 
 jobs:
   build-test-deploy:
