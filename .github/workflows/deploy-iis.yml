@@ -38,7 +38,7 @@ jobs:
     - name: App Settings Variable Substitution
       uses: microsoft/variable-substitution@v1
       with:
-        files: '${{env.DOTNET_ROOT}}/myapp/appsettings.json'
+        files: '${{ env.PROJECT_NAME }}\bin\${{ env.ENVIRONMENT_NAME }}\${{ env.DOTNETCORE_VERSION_FOLDER }}\publish\appsettings.Production.json'
       env:
         ConnectionStrings.Default: "Data Source=mydbserver;Initial Catalog=MyProdDatabase;User Id=appuser;Password=P@ssword1!;App=SampleApi" # Simulate Connection String to change. Eg: Retrieved from Secrets for example.
         ApiKey: "deccf3d2-f73a-43ca-85ba-3a97898b56b2"
